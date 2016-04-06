@@ -15,7 +15,6 @@ var userModel = function () {
             role: String
         });
 
-       
         userSchema.pre('save', function (next) {
             var user = this;
 
@@ -23,7 +22,7 @@ var userModel = function () {
                 next();
                 return;
             }
-           
+
             var hashedPwd = bcrypt.hashSync(user.password, crypto.getCryptLevel());
 
             user.password = hashedPwd;
@@ -31,7 +30,7 @@ var userModel = function () {
             next();
         });
 
-      
+
         userSchema.methods.passwordMatches = function (plainText) {
             var user = this;
             return bcrypt.compareSync(plainText, user.password);

@@ -4,7 +4,7 @@
 var IndexModel = require('../models/index'),
     ProfileModel = require('../models/profile'),
     AdminModel = require('../models/admin'),
-    meetingModel = require('../models/meeting'),
+    Meeting = require('../models/meeting'),
     mongoose = require('mongoose'),
     auth = require('../lib/auth');
 
@@ -31,32 +31,12 @@ module.exports = function (router) {
     });
 
     router.get('/yes', function (req, res) {
+      console.log('succes');
         res.send("success");
     });
 
-   
-    router.post('/api/setmeeting', function(req, res) {
-        var meetingModel = mongoose.model('Meeting',meetingModel.meetingSchema);
-        var meetingModelData = new meetingModel({
-            calenderid: 1,
-            starttime: new Date(),
-            duration: 30,
-            startdate: new Date(),
-            subject: "test"
-        });
-       
-        meetingModelData.save(function(err,data){
-            if(err){
-                res.send("error");
-            }else{
-                res.send(data);
-            }
-        });
-    });
 
-    router.post('/api/cancelmeeting', function(req, res) {
-
-    });
+    
 
     /**
      * Allow the users to log out

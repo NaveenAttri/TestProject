@@ -28,7 +28,6 @@ module.exports = function (router) {
      * Failed authentications will go back to the login page with a helpful error message to be displayed.
      */
     router.post('/', function (req, res) {
-        console.log(req.session.goingTo);
         passport.authenticate('local', {
             successRedirect: req.session.goingTo || '/profile',
             failureRedirect: '/login',

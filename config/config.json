@@ -29,7 +29,7 @@
     },
     "databaseConfig": {
         "host": "localhost",
-        "database": "krakenNextPassport"
+        "database": "testProject"
     },
 
     "bcrypt": {
@@ -75,7 +75,7 @@
                 "arguments": [ "errors/500" ]
             }
         },
-        
+
         //flash messaging middleware
         "flash": {
             "priority": 91,

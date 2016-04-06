@@ -1,17 +1,13 @@
 'use strict';
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var meetingModel = function(){
+var meetingSchema = new Schema({
+    starttime: Date,
+    duration: Number,
+    startdate: Date,
+    subject: String
+});
 
-            var meetingSchema = mongoose.Schema({
-            calenderid: {type:Number, unique: true},
-            starttime: Date,
-            duration: Number,
-            startdate: Date,
-            subject: String
-        });
-
-    };
-
-    module.exports = new meetingModel();
-
+var Meeting = mongoose.model('Meeting', meetingSchema);
+module.exports = Meeting;
