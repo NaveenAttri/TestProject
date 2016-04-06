@@ -3,4 +3,9 @@
 {<body}
     <h1>{@pre type="content" key="greeting"/}</h1>
     <p>You are <strong>{user.name}</strong> and your role is <strong>{user.role}</strong></p>
+    <form action="/meeting" method="post">
+      <input type="submit" value="Set a meeting" />
+      <input name="_csrf" value="{_csrf}" hidden />
+    </form>
+    <a href="/meeting/cancelmeeting" class="btn btn-default"> Cancel a meeting </a>
 {/body}
